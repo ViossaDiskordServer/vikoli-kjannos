@@ -1,20 +1,9 @@
 <?php
 /**
- * This is the default English localisation file containing language specific
- * information excluding interface strings, which are stored in JSON files.
+ * This is the Viossa Messages file.
  *
  * Please see https://www.mediawiki.org/wiki/Localisation for more information.
- * To improve a translation please visit https://translatewiki.net
  */
-
-/**
- * Fallback language, used for all unspecified messages and behavior. This
- * is English by default, for all files other than this one.
- *
- * Do NOT set this to false in any other message file! Leave the line out to
- * accept the default fallback to "en".
- */
-$fallback = false;
 
 /**
  * Is the language written right-to-left?
@@ -42,7 +31,7 @@ $fallback8bitEncoding = 'windows-1252';
 /**
  * To allow "foo[[bar]]" to extend the link over the whole word "foobar"
  */
-$linkPrefixExtension = false;
+$linkPrefixExtension = true;
 
 /**
  * Namespace names. NS_PROJECT is always set to $wgMetaNamespace after the
