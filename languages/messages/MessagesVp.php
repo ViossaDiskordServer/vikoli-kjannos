@@ -1,9 +1,20 @@
 <?php
 /**
- * This is the Viossa Messages file.
+ * This is the default English localisation file containing language specific
+ * information excluding interface strings, which are stored in JSON files.
  *
  * Please see https://www.mediawiki.org/wiki/Localisation for more information.
+ * To improve a translation please visit https://translatewiki.net
  */
+
+/**
+ * Fallback language, used for all unspecified messages and behavior. This
+ * is English by default, for all files other than this one.
+ *
+ * Do NOT set this to false in any other message file! Leave the line out to
+ * accept the default fallback to "en".
+ */
+$fallback = false;
 
 /**
  * Is the language written right-to-left?
@@ -31,7 +42,7 @@ $fallback8bitEncoding = 'windows-1252';
 /**
  * To allow "foo[[bar]]" to extend the link over the whole word "foobar"
  */
-$linkPrefixExtension = true;
+$linkPrefixExtension = false;
 
 /**
  * Namespace names. NS_PROJECT is always set to $wgMetaNamespace after the
@@ -50,24 +61,23 @@ $linkPrefixExtension = true;
  * parser features are available.
  */
 $namespaceNames = [
-	NS_MEDIA            => 'Media',
-	NS_SPECIAL          => 'Special',
+	NS_SPECIAL          => 'Tsatain',
 	NS_MAIN             => '',
-	NS_TALK             => 'Talk',
-	NS_USER             => 'User',
-	NS_USER_TALK        => 'User_talk',
+	NS_TALK             => 'Tsuihanu',
+	NS_USER             => 'Brukdjin',
+	NS_USER_TALK        => 'Brukdjin_tsuihanu',
 	# NS_PROJECT set by $wgMetaNamespace
-	NS_PROJECT_TALK     => '$1_talk',
-	NS_FILE             => 'File',
-	NS_FILE_TALK        => 'File_talk',
+	NS_PROJECT_TALK     => '$1_tsuihanu',
+	NS_FILE             => 'Zeting',
+	NS_FILE_TALK        => 'Zeting_tsuihanu',
 	NS_MEDIAWIKI        => 'MediaWiki',
-	NS_MEDIAWIKI_TALK   => 'MediaWiki_talk',
-	NS_TEMPLATE         => 'Template',
-	NS_TEMPLATE_TALK    => 'Template_talk',
-	NS_HELP             => 'Help',
-	NS_HELP_TALK        => 'Help_talk',
-	NS_CATEGORY         => 'Category',
-	NS_CATEGORY_TALK    => 'Category_talk',
+	NS_MEDIAWIKI_TALK   => 'MediaWiki_tsuihanu',
+	NS_TEMPLATE         => 'Polfal',
+	NS_TEMPLATE_TALK    => 'Polfal_tsuihanu',
+	NS_HELP             => 'Apu',
+	NS_HELP_TALK        => 'Apu_Tsuihanu',
+	NS_CATEGORY         => 'Hjerneklaani',
+	NS_CATEGORY_TALK    => 'Hjerneklaani_tsuihanu',
 ];
 
 /**
@@ -76,6 +86,7 @@ $namespaceNames = [
  * Note that 'namespaceAliases' is a mergable language attribute,
  * which means it is combined with other languages in the fallback chain.
  */
+
 $namespaceAliases = [
 	// The canonical names of namespaces 6 and 7 are, as of MediaWik 1.14,
 	// "File" and "File_talk".  The old names "Image" and "Image_talk" are
@@ -84,6 +95,7 @@ $namespaceAliases = [
 	// the end of all fallback chains.)
 	'Image' => NS_FILE,
 	'Image_talk' => NS_FILE_TALK,
+
 ];
 
 /**
@@ -96,7 +108,6 @@ $namespaceAliases = [
  * ];
  * @endcode
  */
-$namespaceGenderAliases = [];
 
 /**
  * A list of date format preference keys, which can be selected in user
@@ -379,33 +390,33 @@ $magicWords = [
  * @phpcs-require-sorted-array
  */
 $specialPageAliases = [
-	'Activeusers'               => [ 'ActiveUsers' ],
-	'Allmessages'               => [ 'AllMessages' ],
-	'AllMyUploads'              => [ 'AllMyUploads', 'AllMyFiles' ],
-	'Allpages'                  => [ 'AllPages' ],
-	'Ancientpages'              => [ 'AncientPages' ],
-	'ApiHelp'                   => [ 'ApiHelp' ],
-	'ApiSandbox'                => [ 'ApiSandbox' ],
-	'AutoblockList'             => [ 'AutoblockList', 'ListAutoblocks' ],
-	'Badtitle'                  => [ 'Badtitle' ],
-	'Blankpage'                 => [ 'BlankPage' ],
-	'Block'                     => [ 'Block', 'BlockIP', 'BlockUser' ],
-	'BlockList'                 => [ 'BlockList', 'ListBlocks', 'IPBlockList' ],
-	'Booksources'               => [ 'BookSources' ],
-	'BotPasswords'              => [ 'BotPasswords' ],
-	'BrokenRedirects'           => [ 'BrokenRedirects' ],
-	'Categories'                => [ 'Categories' ],
+	'Activeusers'               => [ 'Asa_Brukdjin' ],
+	'Allmessages'               => [ 'Al_pochta' ],
+	'AllMyUploads'              => [ 'Al_zeting_fu_un' ],
+	'Allpages'                  => [ 'Al_lehti' ],
+	'Ancientpages'              => [ 'Protolehti' ],
+	'ApiHelp'                   => [ 'Api_apu' ],
+	'ApiSandbox'                => [ 'Api_spelrum' ],
+	'AutoblockList'             => [ 'Dwaibma_senaitumam'],
+	'Badtitle'                  => [ 'Warui_namae' ],
+	'Blankpage'                 => [ 'Mauge_lehti' ],
+	'Block'                     => [ 'Senai', 'Senai_ip', 'Senai_brukdjin' ],
+	'BlockList'                 => [ 'Senaitumam', 'ListBlocks', 'Senaitumam_ip' ],
+	'Booksources'               => [ 'Ranjalibre' ],
+	'BotPasswords'              => [ 'Botto_tainako' ],
+	'BrokenRedirects'           => [ 'Perpa_gjendvera' ],
+	'Categories'                => [ 'Hjerneklaani' ],
 	'ChangeContentModel'        => [ 'ChangeContentModel' ],
 	'ChangeCredentials'         => [ 'ChangeCredentials' ],
-	'ChangeEmail'               => [ 'ChangeEmail' ],
-	'ChangePassword'            => [ 'ChangePassword', 'ResetPass', 'ResetPassword' ],
-	'ComparePages'              => [ 'ComparePages' ],
-	'Confirmemail'              => [ 'ConfirmEmail' ],
+	'ChangeEmail'               => [ 'Kawari_zepocht' ],
+	'ChangePassword'            => [ 'Kawari_tainako', 'Gjensintua_tainako', 'Gjensintua_tainako' ],
+	'ComparePages'              => [ 'Bidjau_lehti' ],
+	'Confirmemail'              => [ 'Ershiru_zepochta' ],
 	'Contributions'             => [ 'Contributions', 'Contribs' ],
 	'CreateAccount'             => [ 'CreateAccount' ],
 	'Deadendpages'              => [ 'DeadendPages' ],
 	'DeletedContributions'      => [ 'DeletedContributions' ],
-	'DeletePage'                => [ 'DeletePage', 'Delete' ],
+	'DeletePage'                => [ 'Keshite_lehti', 'keshite' ],
 	'Diff'                      => [ 'Diff' ],
 	'DoubleRedirects'           => [ 'DoubleRedirects' ],
 	'EditPage'                  => [ 'EditPage', 'Edit' ],
